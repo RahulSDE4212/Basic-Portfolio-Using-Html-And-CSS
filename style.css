@@ -1,0 +1,184 @@
+:root{
+    /* this is the css pseudo-class which matches the root element of the tree representing the documnet.
+       In html, the :root class is equal to saying  html element and is identical to the selector html, 
+       except that its specifity is higher. 
+    */
+    --teal: #031634; /* this -- declares that this is not a css property instead it is a variable. */
+    --cobalt: #033649;
+    --turquoise: #066464;
+    --beige: #ceb280;
+    --gold: #eaddcc;
+
+
+}
+html{
+    box-sizing: border-box;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+body{
+    margin: 0;
+    padding: 0;
+    color: white; /* this color attribute changes the color of the font. */
+    background-color: var(--teal);
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+#intro{
+    padding: 4rem 1rem 5rem 1rem; /*trbl (top right bottom left)*/
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#intro p{
+    font-size: 1.5rem;
+    line-height: 1.5; /* It tells how much height a line is going to take. */
+}
+
+.name span{
+    display: block;
+    color: var(--gold);
+    font-size: 4rem;
+}
+.profile{
+    padding-bottom: 1rem;
+}
+#intro h2{
+    font-size: 3rem;
+    font-weight: normal;
+}
+#experience ul{
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+}
+#experience li{
+    list-style-type: none; /* this attribute is used to do the listing of items in the way specifed after colon. */
+    padding: 1rem;
+}
+#experience a{
+    color: white;
+}
+#hire{
+    width: 400px;
+    text-align: center; /* It aligns the text in the content-area in the specified way. */
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+#hire p:last-child{
+    margin-top: 3rem;
+}
+.section-turquoise{
+    background-color: var(--turquoise);
+}
+nav{
+    font-size: 80%;
+    padding: 1rem;
+    background-color: var(--cobalt);
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-right: 2rem;
+}
+nav a{
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+nav li:first-child{
+    /* flex-grow: 1; we will write media query to bring this back. */
+    flex-basis: 100%; /* it means that the first child will take 100% of the width. */
+    font-size: 1.5rem;
+    margin-left: 3rem;
+}
+nav a:hover{
+    color: var(--beige);
+    text-decoration: underline;
+}
+
+.button{
+    background-color: orangered;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.button:hover{
+    color: white;
+    background: linear-gradient(145deg, rgba(213,101,82,1) 26%, rgba(222,120,66,1) 33%, rgba(231,77,89,1) 38%);
+
+}
+@media (min-width: 600px) {
+    nav li:first-child{
+        flex-grow: 1;
+        flex-basis: auto; 
+        
+    }
+}
+.gradient-section {
+    height: 2px;
+    background: linear-gradient(145deg, rgba(34,193,195,1) 26%, rgba(253,187,45,1) 33%, rgba(231,77,89,1) 38%);
+    /* background: white; */
+}
+footer{
+    text-align: center;
+    padding: 2rem 0;
+}
+.my-picture{
+    max-height: 500px;
+    max-width: 350px;
+}
+.my-picture img{
+    width: 100%;
+    border-radius: 1rem;
+    margin: 1rem 0;
+}
+#experience{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* gap: 5rem; */
+}
+#experience ul{
+    max-width: 400px;
+    border: solid white 2px;
+    border-radius: 5px;
+    background-color: var(--turquoise);
+    padding: 1rem;
+}
+#experience-header{
+    font-size: 3rem;
+    margin: 0 auto;
+    width: 200px;
+    padding: 1rem;
+}
+
+
+
+
+
+
+/* ------------------Notes ---------------------------------------- 
+
+    * Every heading inside your html file has a by default margin of "1em" assigned to that.
+    * There are two measurement unit 
+            1) em - em is a css unit relative to the font-size of the parent element.
+                  - em values are relative to the font-size of the nearest parent element.
+            2) rem - rem is a css unit relative to the font-size of the html element or root font-size.
+                   - when the root font-size is not explicitly set, rem values are relative to the browser's default font size of 16px.
+    * Even if we give 0 margin to any html element , even then they will not collide with other html element.
+      WHY???
+        -> jab do adjacent html elements ko margin provide kiya jata hai to vertical direction unka margin add nhi 
+           hota bulki dono element me se jika margin bada hai wo margin vertical direction me apply ho jata hai.  
+                ----Article(StackOverflow.com)
+
+    * responsive web pages means for different types of screen, you are going to get different types of css style.
+    * 
+*/
